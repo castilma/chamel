@@ -1,0 +1,10 @@
+<metal:main use-macro="load: base.pt">
+	<metal:slot fill-slot="header">
+		<h1>Welcome to somesite</h1>
+	</metal:slot>
+	<metal:slot fill-slot="content">
+		<h3 tal:condition="current_spec | nothing" tal:content="undecl_name" /> 
+		<!--! change undecl_name to current_spec to make it work-->
+		<p>${content}</p>
+	</metal:slot>
+</metal:main>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8">
+
+	<title metal:define-slot="title">template title</title>
+</head>
+<body>
+	<header>
+		<h1 metal:define-slot="header">A nice header.</h1>
+	</header>
+	<main id="content">
+		<ul tal:condition="tuples | nothing">
+			<li tal:repeat="pair tuples"><a href="/myroute/${pair[1]}" tal:content="pair[0]" /></li>
+		</ul>
+
+		<metal:slot metal:define-slot="content" />
+	</main>
+</body>
+</html>
